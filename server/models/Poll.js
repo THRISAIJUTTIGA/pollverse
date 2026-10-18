@@ -1,0 +1,4 @@
+import mongoose from "mongoose";
+const schema = new mongoose.Schema({ creator:{type:mongoose.Schema.Types.ObjectId,ref:"User"}, question:{type:String,required:true,trim:true,maxlength:240}, description:String, type:{type:String,enum:["single","multiple","rating","yesno"],default:"single"}, options:[{text:{type:String,required:true},votes:{type:Number,default:0}}], category:{type:String,default:"Community"}, tags:[String], coverImage:String, isPublic:{type:Boolean,default:true}, allowMultiple:Boolean, expiresAt:Date, totalVotes:{type:Number,default:0}, likes:[{type:mongoose.Schema.Types.ObjectId,ref:"User"}], status:{type:String,enum:["active","closed","draft"],default:"active"} }, { timestamps:true });
+schema.index({category:1,createdAt:-1}); schema.index({question:"text"});
+export default mongoose.model("Poll", schema);
