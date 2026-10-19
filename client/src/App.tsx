@@ -73,7 +73,7 @@ function PollingDepthScene() {
 
 function Layout({ children }: { children: React.ReactNode }) {
   const { theme, toggleTheme } = useApp();
-  return <div className={`app ${theme}`}><header className="nav"><Link to="/" className="brand"><span className="brand-mark">P</span>Poll<span>Verse</span></Link><nav><Link to="/explore">Explore</Link><Link to="/create">Create</Link><Link to="/dashboard">Dashboard</Link></nav><div className="nav-actions"><button className="icon-btn" onClick={toggleTheme} aria-label="Toggle theme">{theme === "dark" ? "☼" : "◐"}</button><Link className="button small" to="/login">Sign in</Link></div></header>{children}<footer><span>© 2026 PollVerse</span><span>Make every voice visible.</span></footer></div>;
+  return <div className={`app ${theme}`}><header className="nav"><Link to="/" className="brand"><span className="brand-mark">P</span>Poll<span>Verse</span></Link><nav><Link to="/explore">Explore</Link><Link to="/create">Create</Link><Link to="/dashboard">Dashboard</Link></nav><div className="nav-actions"><button className="icon-btn" onClick={toggleTheme} aria-label="Toggle theme">{theme === "dark" ? "☼" : "◐"}</button></div></header>{children}<footer><span>© 2026 PollVerse</span><span>Make every voice visible.</span></footer></div>;
 }
 
 function Home() {
